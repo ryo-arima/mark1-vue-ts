@@ -1,0 +1,46 @@
+services:
+  mark1:
+    image: ryoarima/rocky-arm-mark1:latest
+    container_name: mark1
+    ports:
+      - "8080:8000"
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      - MARK1_CONFIG_PATH=/etc/mark1/main.yaml
+    command: >
+      bash -c "
+      mkdir -p etc/.mark1/ && 
+      touch etc/.mark1/token && 
+      /opt/mark1/server
+      "
+  mysql:
+    platform: linux/x86_64
+    image: mysql:8.0.27
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: mark1
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+  phpmyadmin:
+    platform: linux/x86_64
+    image: phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=mysql
+    ports:
+      - "3001:80"
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--port", "6379", "--requirepass", "mysecretpassword", "--user", "default", "on", ">mysecretpassword", "+@all", "~*"]
