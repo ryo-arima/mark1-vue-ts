@@ -37,6 +37,11 @@
                 </v-row>
             </v-container>
         </v-main>
+    <v-footer app color="primary" dark>
+      <v-col class="text-center white--text">
+        &copy; 2024 mark1
+      </v-col>
+    </v-footer>
     </v-app>
 </template>
 
