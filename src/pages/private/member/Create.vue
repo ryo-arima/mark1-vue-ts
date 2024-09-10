@@ -77,7 +77,7 @@
 
 <script>
 export default {
-    name: 'CreateMember',
+    name: 'PrivateCreateMember',
     data() {
         return {
             valid: false,

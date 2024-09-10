@@ -61,7 +61,7 @@
 
 <script>
 export default {
-    name: 'ShowGroup',
+    name: 'PrivateShowGroup',
     data() {
         return {
             group: {

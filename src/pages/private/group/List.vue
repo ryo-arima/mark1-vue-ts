@@ -42,7 +42,7 @@
 
 <script>
 export default {
-    name: 'GroupList',
+    name: 'PrivateGroupList',
     data() {
         return {
             groups: [

@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: 'Signin',
+  name: 'PublicSignin',
   data() {
     return {
       email: '',

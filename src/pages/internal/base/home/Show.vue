@@ -1,4 +1,3 @@
-import component from '../../../../vite-env';
 <template>
     <v-app>
         <v-app-bar app>

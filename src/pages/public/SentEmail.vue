@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'EmailConfirmation',
+  name: 'PublicEmailConfirmation',
   methods: {
     resendEmail() {
       // メール再送のロジックをここに追加

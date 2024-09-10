@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Forbidden'
+  name: 'PublicForbidden'
 }
 </script>
 

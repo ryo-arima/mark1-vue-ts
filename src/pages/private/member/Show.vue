@@ -85,7 +85,7 @@
 
 <script>
 export default {
-    name: 'ShowMember',
+    name: 'PrivateShowMember',
     data() {
         return {
             member: {

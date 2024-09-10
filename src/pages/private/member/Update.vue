@@ -77,7 +77,7 @@
 
 <script>
 export default {
-    name: 'EditMember',
+    name: 'PrivateUpdateMember',
     data() {
         return {
             valid: false,

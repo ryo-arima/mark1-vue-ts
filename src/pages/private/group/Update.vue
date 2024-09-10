@@ -59,7 +59,7 @@
 
 <script>
 export default {
-    name: 'UpdateGroup',
+    name: 'PrivateUpdateGroup',
     data() {
         return {
             valid: false,

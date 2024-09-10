@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'EmailConfirmation',
+  name: 'PublicEmailConfirmation',
   data() {
     return {
       isEmailConfirmed: false // メール認証の状態を管理

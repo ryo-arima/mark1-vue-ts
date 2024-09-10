@@ -42,7 +42,7 @@
 
 <script>
 export default {
-    name: 'MemberList',
+    name: 'PrivateMemberList',
     data() {
         return {
             members: [

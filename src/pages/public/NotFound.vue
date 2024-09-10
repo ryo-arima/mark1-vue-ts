@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'NotFound'
+  name: 'PublicNotFound'
 }
 </script>
 

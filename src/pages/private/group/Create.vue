@@ -59,7 +59,7 @@
 
 <script>
 export default {
-    name: 'CreateGroup',
+    name: 'PrivateCreateGroup',
     data() {
         return {
             valid: false,

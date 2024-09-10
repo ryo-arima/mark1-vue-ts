@@ -68,7 +68,7 @@
 
 <script>
 export default {
-    name: 'SettingsEditPage',
+    name: 'PrivateSettingUpdate',
     data() {
         return {
             valid: false,

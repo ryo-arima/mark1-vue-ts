@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'TopPage'
+  name: 'PublicTopPage'
 }
 </script>
 
