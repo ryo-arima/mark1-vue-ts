@@ -1,16 +1,23 @@
-```
 <template>
-  <div class="email-confirmation">
-    <h1>メール確認</h1>
-    <p>メールを確認してください。</p>
-    <router-link to="/email-confirmation">メール確認画面に戻る</router-link>
-    <button @click="resendEmail">メールを再送する</button>
-  </div>
+  <v-container class="email-confirmation">
+    <v-row justify="center">
+      <v-col cols="12">
+        <h1 class="display-2">メール確認</h1>
+        <p class="subtitle-1">メールを確認してください。</p>
+        <v-btn color="primary" @click="resendEmail">メールを再送する</v-btn>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col cols="12">
+        <router-link to="/email-confirmation">メール確認画面に戻る</router-link>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'EmailConfirmation',
+  name: 'PublicEmailConfirmation',
   methods: {
     resendEmail() {
       // メール再送のロジックをここに追加

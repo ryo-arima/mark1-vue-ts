@@ -1,28 +1,28 @@
 <template>
-  <div class="unauthorized">
-	<h1>401 - Unauthorized</h1>
-	<p>アクセスが許可されていません。ログインしてください。</p>
-  </div>
+  <v-container fluid class="unauthorized">
+    <v-row justify="center" align="center">
+      <v-col cols="12">
+        <v-card class="elevation-12">
+          <v-card-title class="headline red--text">401 - Unauthorized</v-card-title>
+          <v-card-text class="subtitle-1">アクセスが許可されていません。ログインしてください。</v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Unauthorized'
+  name: 'PublicUnauthorized'
 }
 </script>
 
 <style scoped>
 .unauthorized {
-  text-align: center;
   margin-top: 50px;
 }
 
-.unauthorized h1 {
-  font-size: 2em;
+.red--text {
   color: #ff0000;
-}
-
-.unauthorized p {
-  font-size: 1.2em;
 }
 </style>

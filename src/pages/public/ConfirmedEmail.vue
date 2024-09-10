@@ -1,16 +1,24 @@
 <template>
-  <div class="email-confirmation">
-    <h1>メール確認</h1>
-    <p v-if="isEmailConfirmed">メールが認証されました。</p>
-    <p v-else>メールを確認してください。</p>
-    <router-link to="/email-confirmation">メール確認画面に戻る</router-link>
-    <button @click="resendEmail">メールを再送する</button>
-  </div>
+  <v-container class="email-confirmation">
+    <v-row justify="center">
+      <v-col cols="12">
+        <h1 class="display-2">メール確認</h1>
+        <v-card class="mt-5" v-if="isEmailConfirmed">
+          <v-card-text class="text-center">メールが認証されました。</v-card-text>
+        </v-card>
+        <v-card class="mt-5" v-else>
+          <v-card-text class="text-center">メールを確認してください。</v-card-text>
+        </v-card>
+        <v-btn class="mt-5" color="primary" to="/email-confirmation">メール確認画面に戻る</v-btn>
+        <v-btn class="mt-3" color="primary" @click="resendEmail">メールを再送する</v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'EmailConfirmation',
+  name: 'PublicEmailConfirmation',
   data() {
     return {
       isEmailConfirmed: false // メール認証の状態を管理

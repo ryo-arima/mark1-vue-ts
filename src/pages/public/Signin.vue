@@ -1,35 +1,59 @@
 <template>
-    <div class="signin">
-        <h1>サインイン</h1>
-        <form @submit.prevent="handleSubmit">
-            <div>
-                <label for="email">メールアドレス:</label>
-                <input type="email" id="email" v-model="email" required>
-            </div>
-            <div>
-                <label for="password">パスワード:</label>
-                <input type="password" id="password" v-model="password" required>
-            </div>
-            <button type="submit">サインイン</button>
-        </form>
-    </div>
+  <v-app>
+    <v-app-bar app color="primary">
+        <v-toolbar-title>Mark1</v-toolbar-title>
+    </v-app-bar>
+    <v-main>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="12" md="6">
+            <v-card>
+              <v-card-title class="headline">サインイン</v-card-title>
+              <v-card-text>
+                <v-form @submit.prevent="handleSubmit">
+                  <v-text-field
+                    v-model="email"
+                    label="メールアドレス"
+                    type="email"
+                    required
+                  ></v-text-field>
+                  <v-text-field
+                    v-model="password"
+                    label="パスワード"
+                    type="password"
+                    required
+                  ></v-text-field>
+                  <v-btn type="submit" color="primary" block>サインイン</v-btn>
+                </v-form>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+    <v-footer app color="primary" dark>
+      <v-col class="text-center white--text">
+        &copy; 2024 mark1
+      </v-col>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
 export default {
-    name: 'Signin',
-    data() {
-        return {
-            email: '',
-            password: ''
-        };
-    },
-    methods: {
-        handleSubmit() {
-            // サインインのロジックをここに追加
-            console.log('サインインしました', this.email, this.password);
-        }
+  name: 'PublicSignin',
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
+  },
+  methods: {
+    handleSubmit() {
+      // サインインのロジックをここに追加
+      console.log('サインインしました', this.email, this.password);
     }
+  }
 }
 </script>
 
