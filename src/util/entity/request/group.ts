@@ -1,4 +1,3 @@
-// Groupのインターフェース
 export interface Group {
     id: string;
     uuid: string;
