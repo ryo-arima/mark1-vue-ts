@@ -23,6 +23,7 @@ export class MemberRepositoryImpl implements MemberRepository {
 
     async getMemberForPublic(request: MemberRequest): Promise<MemberResponse> {
         console.log('GetMemberForPublic');
+        
         return {} as MemberResponse;
     }
 
