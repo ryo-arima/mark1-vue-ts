@@ -3,8 +3,6 @@ services:
     image: ryoarima/rocky-arm-mark1:latest
     container_name: mark1
     network_mode: host
-    ports:
-      - "8080:8000"
     depends_on:
       - mysql
       - redis
