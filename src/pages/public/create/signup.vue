@@ -1,6 +1,9 @@
 <template>
     <v-app>
         <v-app-bar app color="primary">
+            <v-btn icon @click="goBack">
+                <v-icon>mdi-arrow-left</v-icon>
+            </v-btn>
             <v-toolbar-title>Mark1</v-toolbar-title>
         </v-app-bar>
         <v-main>
@@ -29,30 +32,47 @@
                                         type="password"
                                         required
                                     ></v-text-field>
-                                    <v-btn type="submit" color="primary" block>サインアップ</v-btn>
+                                    <v-btn color="primary" type="submit">サインアップ</v-btn>
                                 </v-form>
                             </v-card-text>
+                            <v-card-actions>
+                                <v-btn color="secondary" @click="goToTop">トップへ戻る</v-btn>
+                            </v-card-actions>
                         </v-card>
                     </v-col>
                 </v-row>
             </v-container>
         </v-main>
-    <v-footer app color="primary" dark>
-      <v-col class="text-center white--text">
-        &copy; 2024 mark1
-      </v-col>
-    </v-footer>
     </v-app>
 </template>
 
-<script>
-export default {
-    name: 'PublicSignup',
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default defineComponent({
+    name: 'Signup',
     data() {
         return {
             email: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+        };
+    },
+    setup() {
+        const router = useRouter();
+
+        const goBack = () => {
+            router.push('/');
+        };
+
+        const goToTop = () => {
+            router.push('/');
+        };
+
+        return {
+            goBack,
+            goToTop,
         };
     },
     methods: {
@@ -65,11 +85,9 @@ export default {
             console.log('サインアップしました', this.email, this.password);
         }
     }
-}
+});
 </script>
 
-<style scoped>
-.fill-height {
-    min-height: 100vh;
-}
+<style>
+/* 必要に応じてスタイルを追加 */
 </style>
