@@ -1,11 +1,10 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Mark1</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text>ログイン</v-btn>
-      <v-btn text>サインアップ</v-btn>
+      <v-btn text @click="goToSignin">ログイン</v-btn>
+      <v-btn text @click="goToSignup">サインアップ</v-btn>
     </v-app-bar>
 
     <v-main>
@@ -14,7 +13,6 @@
           <v-col cols="12" md="8" class="text-center">
             <h1 class="display-1">ようこそ、私たちのウェブサイトへ！</h1>
             <p class="headline">ここでは最新の情報とサービスを提供しています。</p>
-            <v-btn color="primary" large>もっと見る</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -28,10 +26,29 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  name: 'PublicTopPage'
-}
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default defineComponent({
+  name: 'TopPage',
+  setup() {
+    const router = useRouter();
+
+    const goToSignin = () => {
+      router.push('/signin');
+    };
+
+    const goToSignup = () => {
+      router.push('/signup');
+    };
+
+    return {
+      goToSignin,
+      goToSignup,
+    };
+  },
+});
 </script>
 
 <style scoped>
