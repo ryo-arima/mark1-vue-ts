@@ -1,0 +1,3 @@
+[submodule "src/mark1-util-ts"]
+    path = src/mark1-util-ts
+    url = https://github.com/ryo-arima/mark1-util-ts.git

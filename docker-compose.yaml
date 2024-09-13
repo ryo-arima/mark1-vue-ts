@@ -3,6 +3,8 @@ services:
     image: ryoarima/rocky-arm-mark1:latest
     container_name: mark1
     network_mode: host
+    volumes:
+      - ./tool/back/etc/mark1:/etc/mark1
     depends_on:
       - mysql
       - redis
